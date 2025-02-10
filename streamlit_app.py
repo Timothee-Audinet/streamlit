@@ -66,29 +66,25 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# --- Configuration générale ---
-st.set_page_config(page_title="Portfolio Photographe", layout="wide")
+# Configuration de la page
+st.set_page_config(layout="wide")
 
-# --- CSS personnalisé ---
+# Style CSS personnalisé
 st.markdown(
     """
     <style>
-        .menu-container {
-            background-color: #333;
-            padding: 10px 0;
+        /* Menu de navigation */
+        .css-18e3th9 {
+            background-color: #333 !important;
+            padding: 30px 0 !important;
         }
-        .menu-container ul {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            list-style-type: none;
-        }
-        .menu-container ul li a {
-            color: white !important;
-            font-size: 18px;
-            text-decoration: none;
+        .css-18e3th9 span {
+            font-size: 24px !important;
             font-weight: bold;
+            letter-spacing: 1.5px;
+            color: #ddd !important;
         }
+        /* En-tête */
         .header-container {
             position: relative;
             text-align: center;
@@ -96,41 +92,65 @@ st.markdown(
         }
         .header-container img {
             width: 100%;
-            height: 400px;
-            object-fit: cover;
+            height: auto;
+            filter: brightness(60%);
         }
         .header-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 36px;
+            text-align: center;
+        }
+        .header-text h1 {
+            font-size: 80px;
             font-weight: bold;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
+            margin: 0;
+        }
+        .header-text h2 {
+            font-size: 40px;
+            font-weight: normal;
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
+# Barre de navigation
+selected = option_menu(
+    menu_title=None,
+    options=["ACCUEIL", "BIOGRAPHIE", "GALERIE ARTISTIQUE", "FORMATIONS", "MATERIELS", "BOUTIQUE", "CONTACTS"],
+    icons=["house", "person", "image", "book", "tools", "cart", "envelope"],
+    menu_icon="cast",
+    default_index=0,
+    orientation="horizontal",
+)
+
+# Section Accueil
+st.markdown('<div class="header-container">', unsafe_allow_html=True)
+st.image("header.jpg", use_column_width=True)
+st.markdown(
+    '<div class="header-text"><h1>Prénom Nom</h1><h2>Photographe Animalier</h2></div>',
+    unsafe_allow_html=True
+)
+st.markdown('</div>', unsafe_allow_html=True)
+
 # --- Menu en pleine largeur ---
-with st.container():
-    selected = option_menu(
-        menu_title=None,
-        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
-        icons=["house", "image", "info-circle", "envelope"],
-        menu_icon="cast",
-        default_index=0,
-        orientation="horizontal",
-        styles={
-            "container": {"padding": "0!important", "background-color": "#333"},
-            "icon": {"color": "white", "font-size": "18px"},
-            "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
-            "nav-link-selected": {"background-color": "#555"},
-        }
-    )
+#with st.container():
+#    selected = option_menu(
+#        menu_title=None,
+#        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
+#        icons=["house", "image", "info-circle", "envelope"],
+#        menu_icon="cast",
+#        default_index=0,
+#        orientation="horizontal",
+#        styles={
+#            "container": {"padding": "0!important", "background-color": "#333"},
+#            "icon": {"color": "white", "font-size": "18px"},
+#            "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
+#            "nav-link-selected": {"background-color": "#555"},
+#        }
+#    )
 
 # Définir les liens GitHub des dossiers d'images
 GITHUB_USERNAME = "Timothee-Audinet"
@@ -143,20 +163,20 @@ photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg
 wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
 
 # --- Page d'Accueil ---
-if selected == "Accueil":
-    with st.container():
-        st.markdown("""
-        <div class="header-container">
-            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/LES%20JOURETS_08%202024-0718.jpg" alt="Bannière">
-            <div class="header-text">Prénom Nom<br>Photographe Animalier</div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    st.markdown("### 📖 À Propos")
-    st.write(
-        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
-        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
-    )
+#if selected == "Accueil":
+#    with st.container():
+#        st.markdown("""
+#        <div class="header-container">
+#            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/LES%20JOURETS_08%202024-0718.jpg" alt="Bannière">
+#            <div class="header-text">Prénom Nom<br>Photographe Animalier</div>
+#        </div>
+#        """, unsafe_allow_html=True)
+#    
+#    st.markdown("### 📖 À Propos")
+#    st.write(
+#        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
+#        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
+#    )
 
 # --- Portfolios ---
 if selected == "Galerie":
