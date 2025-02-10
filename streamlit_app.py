@@ -119,7 +119,7 @@ st.markdown(
 with st.container():
     selected = option_menu(
         menu_title=None,
-        options=["Accueil", "Galerie", "Fond d'écran", "À propos", "Contact"],
+        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
         icons=["house", "image", "info-circle", "envelope"],
         menu_icon="cast",
         default_index=0,
@@ -178,11 +178,6 @@ if selected == "Fond d'écran":
         with cols[i % 3]:
             st.image(img_url, use_container_width=True)
             st.download_button("Télécharger", img_url, file_name=filename)
-
-# --- Page À Propos ---
-if selected == "À propos":
-    st.markdown("## ℹ️ À Propos")
-    st.write("Bio plus détaillée ici...")
 
 # --- Page Contact ---
 if selected == "Contact":
