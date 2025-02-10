@@ -11,13 +11,18 @@ st.markdown(
         /* Menu de navigation */
         .css-18e3th9 {
             background-color: #333 !important;
-            padding: 150px 0 !important;
+            padding: 200px 0 !important;
+            width: 100% !important;
         }
         .css-18e3th9 span {
             font-size: 24px !important;
             font-weight: bold;
             letter-spacing: 1.5px;
             color: #ddd !important;
+        }
+        /* Police globale */
+        * {
+            font-family: 'Century Gothic', sans-serif !important;
         }
         /* En-tête */
         .header-container {
@@ -26,7 +31,7 @@ st.markdown(
             color: white;
         }
         .header-container img {
-            width: 60%;
+            width: 100%;
             height: auto;
             filter: brightness(60%);
         }
