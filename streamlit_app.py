@@ -6,7 +6,7 @@ import os
 st.set_page_config(page_title="Wildlife Photography Portfolio", layout="wide")
 
 # Sidebar (profil personnel)
-st.sidebar.image("profile.jpg", width=150)
+st.sidebar.image("https://github.com/Timothee-Audinet/streamlit/blob/main/LES%20JOURETS_08%202024-0718.jpg", width=150)
 st.sidebar.markdown("## À propos de moi")
 st.sidebar.write("Passionné de photographie animalière, j'aime capturer la beauté de la nature.")
 st.sidebar.markdown("[Mon Instagram](https://www.instagram.com/timothee_wildlife_photo/)")
