@@ -147,20 +147,20 @@ photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg
 wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
 
 # --- Page d'Accueil ---
-#if selected == "Accueil":
-#    with st.container():
-#        st.markdown("""
-#        <div class="header-container">
-#            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/LES%20JOURETS_08%202024-0718.jpg" alt="Bannière">
-#            <div class="header-text">Prénom Nom<br>Photographe Animalier</div>
-#        </div>
-#        """, unsafe_allow_html=True)
-#    
-#    st.markdown("### 📖 À Propos")
-#    st.write(
-#        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
-#        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
-#    )
+if selected == "Accueil":
+    with st.container():
+        st.markdown("""
+        <div class="header-container">
+            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/LES%20JOURETS_08%202024-0718.jpg" alt="Bannière">
+            <div class="header-text">Prénom Nom<br>Photographe Animalier</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("### 📖 À Propos")
+    st.write(
+        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
+        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
+    )
 
 # --- Portfolios ---
 if selected == "Galerie":
