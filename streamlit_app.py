@@ -16,7 +16,7 @@ st.sidebar.markdown("[Mon Instagram](https://www.instagram.com/timothee_wildlife
 menu = st.selectbox("Navigation", ["Photographie", "Wallpapers"], key="menu_navigation")
 
 # Définir les liens GitHub des dossiers d'images
-GITHUB_USERNAME = "Timothee_Audinet"
+GITHUB_USERNAME = "Timothee-Audinet"
 REPO_NAME = "streamlit"
 BRANCH = "main"
 
