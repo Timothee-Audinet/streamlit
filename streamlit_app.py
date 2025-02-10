@@ -119,7 +119,7 @@ st.markdown(
 with st.container():
     selected = option_menu(
         menu_title=None,
-        options=["Accueil", "Galerie", "À propos", "Contact"],
+        options=["Accueil", "Galerie", "Fond d'écran", "À propos", "Contact"],
         icons=["house", "image", "info-circle", "envelope"],
         menu_icon="cast",
         default_index=0,
@@ -159,7 +159,7 @@ if selected == "Accueil":
     )
 
 # --- Portfolios ---
-if selected == "PHOTOGRAPHIE":
+if selected == "Galerie":
     st.title("📷 Galerie de Photographie")
     cols = st.columns(3)
     
@@ -169,7 +169,7 @@ if selected == "PHOTOGRAPHIE":
             st.image(img_url, use_container_width=True)
             st.caption(filename.split(".")[0])  # Affiche le nom du fichier
 
-if selected == "WALLPAPERS":
+if selected == "Fond d'écran":
     st.title("🖼️ Téléchargez un Wallpaper")
     cols = st.columns(3)
     
