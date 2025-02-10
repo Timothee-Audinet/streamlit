@@ -49,28 +49,4 @@ elif menu == "Wallpapers":
             st.image(img_url, use_column_width=True)
             st.download_button("Télécharger", img_url, file_name=filename)
 
-if menu == "Photographie":
-    st.title("📷 Galerie de Photographie")
-    cols = st.columns(3)
-    
-    for i, filename in enumerate(os.listdir(photo_dir)):
-        if filename.endswith(".jpg") or filename.endswith(".png"):
-            img_path = os.path.join(photo_dir, filename)
-            img = Image.open(img_path)
-            with cols[i % 3]:
-                st.image(img, use_column_width=True)
-                st.caption(f"{filename.split('.')[0]}")  # Nom de l'image comme légende
-
-elif menu == "Wallpapers":
-    st.title("🖼️ Téléchargez un Wallpaper")
-    cols = st.columns(3)
-    
-    for i, filename in enumerate(os.listdir(wallpaper_dir)):
-        if filename.endswith(".jpg") or filename.endswith(".png"):
-            img_path = os.path.join(wallpaper_dir, filename)
-            img = Image.open(img_path)
-            with cols[i % 3]:
-                st.image(img, use_column_width=True)
-                st.download_button("Télécharger", img_path, file_name=filename)
-
 
