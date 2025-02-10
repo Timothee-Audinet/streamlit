@@ -62,7 +62,7 @@ with st.container():
     selected = option_menu(
         menu_title=None,
         options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
-        icons=["house", "image", "info-circle", "envelope"],
+        icons=["house", "image", "iphone", "envelope"],
         menu_icon="cast",
         default_index=0,
         orientation="horizontal",
