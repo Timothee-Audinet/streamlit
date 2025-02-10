@@ -12,7 +12,8 @@ st.sidebar.write("Passionné de photographie animalière, j'aime capturer la bea
 st.sidebar.markdown("[Mon Instagram](https://www.instagram.com/timothee_wildlife_photo/)")
 
 # Menu horizontal
-menu = st.selectbox("Navigation", ["Photographie", "Wallpapers"])
+#menu = st.selectbox("Navigation", ["Photographie", "Wallpapers"])
+menu = st.selectbox("Navigation", ["Photographie", "Wallpapers"], key="menu_navigation")
 
 # Définir les liens GitHub des dossiers d'images
 GITHUB_USERNAME = "Timothee_Audinet"
