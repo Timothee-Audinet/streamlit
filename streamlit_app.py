@@ -89,7 +89,7 @@ if selected == "Accueil":
     with st.container():
         st.markdown("""
         <div class="header-container">
-            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/LES%20JOURETS_08%202024-0718.jpg" alt="Bannière">
+            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/Image profile.png" alt="Bannière">
             <div class="header-text"><h1>Timothée Audinet</h1><h2>Photographe Animalier</h2></div>
         </div>
         """, unsafe_allow_html=True)
