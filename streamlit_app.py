@@ -78,7 +78,7 @@ st.markdown(
         /* Menu de navigation */
         .css-18e3th9 {
             background-color: #333 !important;
-            padding: 30px 0 !important;
+            padding: 50px 0 !important;
         }
         .css-18e3th9 span {
             font-size: 24px !important;
@@ -152,7 +152,7 @@ if selected == "Accueil":
         st.markdown("""
         <div class="header-container">
             <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/LES%20JOURETS_08%202024-0718.jpg" alt="Bannière">
-            <div class="header-text">Prénom Nom<br>Photographe Animalier</div>
+            <div class="header-text">Timothée Audinet<br>Photographe Animalier</div>
         </div>
         """, unsafe_allow_html=True)
     
