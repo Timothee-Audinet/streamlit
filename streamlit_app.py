@@ -78,7 +78,7 @@ st.markdown(
         /* Menu de navigation */
         .css-18e3th9 {
             background-color: #333 !important;
-            padding: 50px 0 !important;
+            padding: 150px 0 !important;
         }
         .css-18e3th9 span {
             font-size: 24px !important;
@@ -94,7 +94,7 @@ st.markdown(
         }
         .header-container img {
             width: 100%;
-            height: 10%;
+            height: auto;
             filter: brightness(60%);
         }
         .header-text {
