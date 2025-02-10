@@ -63,6 +63,8 @@
 #            st.image(img_url, use_container_width=True)
 #            st.download_button("Télécharger", img_url, file_name=filename)
 
+
+
 import streamlit as st
 from streamlit_option_menu import option_menu
 
@@ -116,41 +118,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Barre de navigation
-selected = option_menu(
-    menu_title=None,
-    options=["ACCUEIL", "BIOGRAPHIE", "GALERIE ARTISTIQUE", "FORMATIONS", "MATERIELS", "BOUTIQUE", "CONTACTS"],
-    icons=["house", "person", "image", "book", "tools", "cart", "envelope"],
-    menu_icon="cast",
-    default_index=0,
-    orientation="horizontal",
-)
-
-# Section Accueil
-st.markdown('<div class="header-container">', unsafe_allow_html=True)
-st.image("header.jpg", use_column_width=True)
-st.markdown(
-    '<div class="header-text"><h1>Prénom Nom</h1><h2>Photographe Animalier</h2></div>',
-    unsafe_allow_html=True
-)
-st.markdown('</div>', unsafe_allow_html=True)
 
 # --- Menu en pleine largeur ---
-#with st.container():
-#    selected = option_menu(
-#        menu_title=None,
-#        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
-#        icons=["house", "image", "info-circle", "envelope"],
-#        menu_icon="cast",
-#        default_index=0,
-#        orientation="horizontal",
-#        styles={
-#            "container": {"padding": "0!important", "background-color": "#333"},
-#            "icon": {"color": "white", "font-size": "18px"},
-#            "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
-#            "nav-link-selected": {"background-color": "#555"},
-#        }
-#    )
+with st.container():
+    selected = option_menu(
+        menu_title=None,
+        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
+        icons=["house", "image", "info-circle", "envelope"],
+        menu_icon="cast",
+        default_index=0,
+        orientation="horizontal",
+        styles={
+            "container": {"padding": "0!important", "background-color": "#333"},
+            "icon": {"color": "white", "font-size": "18px"},
+            "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
+            "nav-link-selected": {"background-color": "#555"},
+        }
+    )
 
 # Définir les liens GitHub des dossiers d'images
 GITHUB_USERNAME = "Timothee-Audinet"
