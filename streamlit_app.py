@@ -27,8 +27,6 @@ wallpaper_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME
 photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg"]  # Remplace par tes fichiers réels
 wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
 
-menu = st.selectbox("Navigation", ["Photographie", "Wallpapers"])
-
 if menu == "Photographie":
     st.title("📷 Galerie de Photographie")
     cols = st.columns(3)
@@ -36,7 +34,7 @@ if menu == "Photographie":
     for i, filename in enumerate(photo_files):
         img_url = photo_dir + filename  # URL complète de l'image
         with cols[i % 3]:
-            st.image(img_url, use_column_width=True)
+            st.image(img_url, use_container_width=True)
             st.caption(filename.split(".")[0])  # Affiche le nom du fichier
 
 elif menu == "Wallpapers":
@@ -46,7 +44,7 @@ elif menu == "Wallpapers":
     for i, filename in enumerate(wallpaper_files):
         img_url = wallpaper_dir + filename
         with cols[i % 3]:
-            st.image(img_url, use_column_width=True)
+            st.image(img_url, use_container_width=True)
             st.download_button("Télécharger", img_url, file_name=filename)
 
 
