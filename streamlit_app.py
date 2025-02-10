@@ -94,7 +94,7 @@ st.markdown(
         }
         .header-container img {
             width: 100%;
-            height: 200px;
+            height: 10%;
             filter: brightness(60%);
         }
         .header-text {
