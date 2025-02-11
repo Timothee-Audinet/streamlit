@@ -1,13 +1,78 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
+import pages as pg
 
 # Configuration de la page
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
-
+### POLICE ###
 with open( "style.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+
+# Définir les liens GitHub des dossiers d'images
+GITHUB_USERNAME = "Timothee-Audinet"
+REPO_NAME = "streamlit"
+BRANCH = "main"
+photo_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/photos_dir/"
+wallpaper_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/wallpaper_dir/"
+## Liste des images (à adapter selon ton repo)
+photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg"]  # Remplace par tes fichiers réels
+wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
+
+
+
+
+
+
+
+###### MENU NAVIGATION SUPERIEUR ######
+st.set_page_config(initial_sidebar_state="collapsed")
+
+pages = ["Accueil", "Galerie", "Fond d'écran", "Contact"],
+options = {"use_padding": False}
+#parent_dir = os.path.dirname(os.path.abspath(__file__))
+#logo_path = os.path.join(parent_dir, "cubes.svg")
+#urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
+styles = {
+    "nav": {
+        "background-color": "royalblue",
+        "justify-content": "left",
+    },
+    "img": {
+        "padding-right": "14px",
+    },
+    "span": {
+        "color": "white",
+        "padding": "14px",
+    },
+    "active": {
+        "background-color": "white",
+        "color": "var(--text-color)",
+        "font-weight": "normal",
+        "padding": "14px",
+    }
+}
+options = {
+    "show_menu": False,
+    "show_sidebar": False,
+}
+
+page = st_navbar(
+    pages,
+    #logo_path=logo_path,
+    #urls=urls,
+    styles=styles,
+    options=options,
+)
+
+functions = {
+    "Home": pg.show_home,
+}
+go_to = functions.get(page)
+if go_to:
+    go_to()
+
 
 
 # Style CSS personnalisé
@@ -62,13 +127,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-page = st_navbar(
-    pages=["Accueil", "Galerie", "Fond d'écran", "Contact"],
-    options={"use_padding": False}
-)
-st.write(page)
-
 # --- Menu en pleine largeur ---
 #with st.container():
 #    selected = option_menu(
@@ -86,15 +144,7 @@ st.write(page)
 #        }
 #    )
 
-# Définir les liens GitHub des dossiers d'images
-GITHUB_USERNAME = "Timothee-Audinet"
-REPO_NAME = "streamlit"
-BRANCH = "main"
-photo_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/photos_dir/"
-wallpaper_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/wallpaper_dir/"
-## Liste des images (à adapter selon ton repo)
-photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg"]  # Remplace par tes fichiers réels
-wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
+
 
 # --- Page d'Accueil ---
 if selected == "Accueil":
