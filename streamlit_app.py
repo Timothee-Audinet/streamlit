@@ -3,7 +3,7 @@ from streamlit_navigation_bar import st_navbar
 
 st.set_page_config(layout="wide")
 
-pages = ["Accueil", "Galerie", "Fond d'écran", "Contact"],
+pages = ["Home", "Install", "Fond d'écran", "Contact"],
 options = {"use_padding": False}
 urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
 styles = {"div": {"max-width": "35rem"}}
