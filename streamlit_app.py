@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+from streamlit_navigation_bar import st_navbar
 
 # Configuration de la page
 st.set_page_config(layout="wide")
@@ -62,22 +63,25 @@ st.markdown(
 )
 
 
+page = st_navbar(["Accueil", "Galerie", "Fond d'écran", "Contact"])
+st.write(page)
+
 # --- Menu en pleine largeur ---
-with st.container():
-    selected = option_menu(
-        menu_title=None,
-        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
-        icons=["house", "image", "phone", "envelope"],
-        menu_icon="cast",
-        default_index=0,
-        orientation="horizontal",
-        styles={
-            "container": {"padding": "0!important", "background-color": "#333"},
-            "icon": {"color": "white", "font-size": "18px"},
-            "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
-            "nav-link-selected": {"background-color": "#555"},
-        }
-    )
+#with st.container():
+#    selected = option_menu(
+#        menu_title=None,
+#        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
+#        icons=["house", "image", "phone", "envelope"],
+#        menu_icon="cast",
+#        default_index=0,
+#        orientation="horizontal",
+#        styles={
+#            "container": {"padding": "0!important", "background-color": "#333"},
+#            "icon": {"color": "white", "font-size": "18px"},
+#            "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
+#            "nav-link-selected": {"background-color": "#555"},
+#        }
+#    )
 
 # Définir les liens GitHub des dossiers d'images
 GITHUB_USERNAME = "Timothee-Audinet"
