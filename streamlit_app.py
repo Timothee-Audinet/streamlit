@@ -159,7 +159,7 @@ if selected == "Accueil":
         "Vous trouverez plusieurs onglets, avec une galerie photos et les fonds d'écrans téléchargeables."
     )
     st.write(
-        "Le site est encore en cours de construction (je l'écris tout seul)."
+        "Le site est encore en cours de construction, j'apprend petit à petit."
     )
     st.markdown("### A propos")
     st.write(    
@@ -180,6 +180,9 @@ if selected == "Accueil":
         "N'hésitez pas à me suivre sur instagram pour recommander mon travail, cela aide beaucoup !"
     )
     st.markdown("</div>", unsafe_allow_html=True)
+
+    social_media_icons = SocialMediaIcons(social_media_links)
+    social_media_icons.render()
 
 # --- Portfolios ---
 if selected == "Galerie":
