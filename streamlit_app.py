@@ -9,8 +9,6 @@ st.set_page_config(layout="wide")
 with open( "style.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
-
-# Style CSS personnalisé
 st.markdown(
     """
     <style>
@@ -19,6 +17,8 @@ st.markdown(
             background-color: #333 !important;
             padding: 200px 0 !important;
             width: 100% !important;
+            display: flex;
+            justify-content: center;
         }
         .css-18e3th9 span {
             font-size: 24px !important;
@@ -35,9 +35,10 @@ st.markdown(
             position: relative;
             text-align: center;
             color: white;
+            width: 100%;
         }
         .header-container img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             filter: brightness(60%);
         }
@@ -47,6 +48,7 @@ st.markdown(
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
+            width: 50%;
         }
         .header-text h1 {
             font-size: 80px;
@@ -57,11 +59,16 @@ st.markdown(
             font-size: 40px;
             font-weight: normal;
         }
+        /* Section contenu limité */
+        .content-container {
+            max-width: 50%;
+            margin: auto;
+            text-align: center;
+        }
     </style>
     """,
     unsafe_allow_html=True
 )
-
 
 
 # --- Menu en pleine largeur ---
@@ -101,11 +108,13 @@ if selected == "Accueil":
         </div>
         """, unsafe_allow_html=True)
     
+    st.markdown("<div class='content-container'>", unsafe_allow_html=True)
     st.markdown("### 📖 À Propos")
     st.write(
         "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
         "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
     )
+    st.markdown("</div>", unsafe_allow_html=True)
 
 # --- Portfolios ---
 if selected == "Galerie":
