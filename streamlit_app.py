@@ -68,6 +68,8 @@ page = st_navbar(
 
 functions = {
     "Home": pg.show_home,
+    "Accueil": pg.show_home,
+    "Galerie": pg.show_galerie,
 }
 go_to = functions.get(page)
 if go_to:
