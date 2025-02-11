@@ -1,78 +1,127 @@
-import streamlit as st
-from streamlit_navigation_bar import st_navbar
+mport streamlit as st
+from streamlit_option_menu import option_menu
 
+# Configuration de la page
 st.set_page_config(layout="wide")
 
-pages = ["Home", "Install", "Fond d'écran", "Contact"],
-options = {"use_padding": False}
-urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
-styles = {"div": {"max-width": "35rem"}}
+# Style CSS personnalisé
+st.markdown(
+    """
+    <style>
+        /* Menu de navigation */
+        .css-18e3th9 {
+            background-color: #333 !important;
+            padding: 200px 0 !important;
+            width: 100% !important;
+        }
+        .css-18e3th9 span {
+            font-size: 24px !important;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            color: #ddd !important;
+        }
+        /* Police globale */
+        * {
+            font-family: 'Century Gothic', sans-serif !important;
+        }
+        /* En-tête */
+        .header-container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .header-container img {
+            width: 60%;
+            height: auto;
+            filter: brightness(60%);
+        }
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .header-text h1 {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .header-text h2 {
+            font-size: 40px;
+            font-weight: normal;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-page = st_navbar(pages, urls=urls, styles=styles)
 
-st.header(page)
-
-#st.header(page)
-
-if page == "Home":
-    st.write(
-        """
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at aliquam
-        tortor, eget cursus purus. Vestibulum porta eget lacus ut tempus.
-        Suspendisse mollis ex quis erat ullamcorper, sit amet mollis mi varius.
-        Ut a consectetur dolor, non laoreet erat. Donec convallis vel lorem non
-        lobortis. Cras lobortis, dolor ac rutrum ornare, lacus massa dapibus
-        justo, et viverra lectus augue non purus. Morbi tincidunt lacinia
-        turpis, et elementum mi pellentesque porttitor. Cras blandit lectus
-        massa, ac sollicitudin urna mollis eu.
-
-        Nunc vestibulum fringilla ipsum ac fringilla. Suspendisse eget lectus
-        at augue cursus maximus. Nullam vel nibh quis ex fermentum laoreet.
-        Maecenas nec suscipit neque. Fusce ac dictum dolor, eu pharetra nisi.
-        Nunc nec augue at velit dignissim viverra. Quisque convallis in ante
-        non placerat. Mauris dolor leo, dictum eu laoreet eleifend, molestie at
-        dolor. Phasellus rutrum urna id semper ornare.
-
-        Donec sagittis rhoncus dictum. Praesent sed lobortis lorem, sed
-        venenatis tellus. Sed nunc sapien, pharetra vitae luctus in, posuere
-        euismod quam. Sed dapibus nibh et aliquet fringilla. Phasellus a
-        bibendum elit. Mauris tincidunt semper lacus eget mollis. Sed dapibus
-        leo ut augue cursus, ac elementum ex ultricies. Ut nisl diam, tincidunt
-        nec lectus vel, egestas mattis ligula. Morbi finibus fermentum varius.
-        Mauris laoreet commodo lacus et tempor. Donec id nisl pharetra felis
-        tempor porttitor. Fusce porta libero ut dui porta suscipit.
-        """
+# --- Menu en pleine largeur ---
+with st.container():
+    selected = option_menu(
+        menu_title=None,
+        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
+        icons=["house", "image", "info-circle", "envelope"],
+        menu_icon="cast",
+        default_index=0,
+        orientation="horizontal",
+        styles={
+            "container": {"padding": "0!important", "background-color": "#333", "width": "100%"},
+            "icon": {"color": "white", "font-size": "18px"},
+            "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
+            "nav-link-selected": {"background-color": "#555"},
+        }
     )
-elif page == "Install":
+
+# Définir les liens GitHub des dossiers d'images
+GITHUB_USERNAME = "Timothee-Audinet"
+REPO_NAME = "streamlit"
+BRANCH = "main"
+photo_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/photos_dir/"
+wallpaper_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/wallpaper_dir/"
+## Liste des images (à adapter selon ton repo)
+photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg"]  # Remplace par tes fichiers réels
+wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
+
+# --- Page d'Accueil ---
+if selected == "Accueil":
+    with st.container():
+        st.markdown("""
+        <div class="header-container">
+            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/ImageProfile.png" alt="Bannière">
+            <div class="header-text"><h1>Timothée Audinet</h1><h2>Photographe Animalier</h2></div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("### 📖 À Propos")
     st.write(
-        """
-        Mauris neque dui, scelerisque vel consequat maximus, hendrerit nec
-        lorem. Vestibulum suscipit tortor nec gravida imperdiet. Morbi eget ex
-        sed nunc hendrerit bibendum in ultrices urna. Pellentesque vitae est
-        tellus. Maecenas fringilla ullamcorper tempus. Nulla molestie arcu
-        quam. In et nibh a enim volutpat molestie ac id metus.
-        """
-    )
-elif page == "Documentation":
-    st.write(
-        """
-        Maecenas mollis, mauris sit amet pretium convallis, massa augue
-        scelerisque felis, in sagittis ante risus quis arcu. Nullam eu dolor id
-        tellus venenatis dapibus. Praesent a feugiat metus, a congue leo.
-        Suspendisse ipsum nunc, mattis eget luctus vel, molestie in ante.
-        Aliquam erat volutpat. Donec sollicitudin quam ac aliquet pellentesque.
-        """
-    )
-elif page == "Examples":
-    st.write(
-        """
-        Sed egestas justo vel leo pulvinar fringilla. Nam aliquam metus vitae
-        odio aliquam, in laoreet sapien tempus. Sed sit amet mauris quam.
-        Curabitur euismod convallis sapien, sed euismod tellus finibus ac.
-        Mauris ut felis vehicula, tincidunt magna quis, dignissim nisi. In
-        neque nisi, ultricies in lobortis at, venenatis non neque.
-        """
+        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
+        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
     )
 
-with st.sidebar:
-    st.header("Sidebar")
+# --- Portfolios ---
+if selected == "Galerie":
+    st.title("📷 Galerie de Photographie")
+    cols = st.columns(3)
+    
+    for i, filename in enumerate(photo_files):
+        img_url = photo_dir + filename  # URL complète de l'image
+        with cols[i % 3]:
+            st.image(img_url, use_container_width=True)
+            st.caption(filename.split(".")[0])  # Affiche le nom du fichier
+
+if selected == "Fond d'écran":
+    st.title("🖼️ Téléchargez un Wallpaper")
+    cols = st.columns(3)
+    
+    for i, filename in enumerate(wallpaper_files):
+        img_url = wallpaper_dir + filename
+        with cols[i % 3]:
+            st.image(img_url, use_container_width=True)
+            st.download_button("Télécharger", img_url, file_name=filename)
+
+# --- Page Contact ---
+if selected == "Contact":
+    st.markdown("## 📩 Contact")
+    st.write("Formulaire de contact ou infos ici...")
