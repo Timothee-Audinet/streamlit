@@ -180,6 +180,7 @@ if selected == "Galerie":
     
     for i, filename in enumerate(photo_files):
         img_url = photo_dir + filename  # URL complète de l'image
+        st.image("https://raw.githubusercontent.com/Timothee-Audinet/streamlit/main/photos_dir/Chevrette.png", caption="Test image", use_container_width=True)
         with cols[i % 3]:
             st.image(img_url, use_container_width=True)
             st.caption(filename.split(".")[0])  # Affiche le nom du fichier
