@@ -158,10 +158,12 @@ if selected == "Accueil":
         "Je suis actuellement en thèse de chimie quantique où j'étudie l'infuence des propriétés relativistes sur la structure des atomes."
     )
     st.write(
-        "Mais de puis tout petit, je suis passionné par la photographie animalière. Il y a 4 ans j'ai commencé à photographier les animaux que j'aimais observer."
+        "Mais depuis l'enfance, je suis passionné par la faune sauvage. Il y a 4 ans j'ai commencé à photographier les animaux que j'aimais observer."
     )
     st.write(
-        "J'essaye de capturer la beauté de la faune sauvage dans son habitat naturel. "
+        "J'essaye de capturer la beauté de la faune sauvage dans son habitat naturel, sans causer le moindre dérangement. "
+        "L'utilisation d'appât ou autres moyens d'approcher les animaux ne représente pas pour moi l'éthique photographique. "
+        "Seule l'attente et la patience me permettent d'obtenir mes photos."
     )
     st.write(
         "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
