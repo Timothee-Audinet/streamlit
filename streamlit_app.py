@@ -172,16 +172,13 @@ if selected == "Galerie":
             st.caption(filename.split(".")[0])  # Affiche le nom du fichier
 
 if selected == "Fond d'écran":
-    st.title("🖼️ Téléchargez un fond d'écran")
+    st.title("🖼️ Fonds d'écran")
     st.markdown("<div class='content-container'>", unsafe_allow_html=True)
-    st.header("N'hésitez pas à télécharger", divider=True)    
-    st.markdown('''If you end a line with two spaces,
-    a soft return is used for the next line.
-
-    Two (or more) newline characters in a row will result in a hard return.
-    ''')
+    st.header("N'hésitez pas à télécharger !", divider=True)    
     st.write(
         "Pour me remercier vous pouvez partager votre nouveau fond d'écran en m'identifiant sur votre story, me suivre, partager certaines de mes photos."
+    )
+    st.write(
         "Merci."
     )
     
