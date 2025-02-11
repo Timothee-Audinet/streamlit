@@ -175,7 +175,7 @@ if selected == "Accueil":
 
 # --- Portfolios ---
 if selected == "Galerie":
-    st.title("📷 Galerie de Photographie")
+    st.title("📷 Galerie Photo")
     cols = st.columns(3)
     
     for i, filename in enumerate(photo_files):
