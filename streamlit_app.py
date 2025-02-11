@@ -13,9 +13,9 @@ st.markdown(
     """
     <style>
         .block-container {
-            padding-top: 1rem;
+            padding-top: 0rem;
             padding-bottom: 0rem;
-            margin-top: 1rem;
+            margin-top: 0rem;
         }
         /* Menu de navigation */
         .css-18e3th9 {
