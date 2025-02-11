@@ -61,9 +61,12 @@ st.markdown(
         }
         /* Section contenu limité */
         .content-container {
-            max-width: 50%;
+            width: 50%;
             margin: auto;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
     """,
@@ -81,7 +84,7 @@ with st.container():
         default_index=0,
         orientation="horizontal",
         styles={
-            "container": {"padding": "0!important", "background-color": "#333", "width": "100%"},
+            .container {"padding": "0!important", "background-color": "#333", "width": "100%", "display": "flex", "justify-content": "center"},
             "icon": {"color": "white", "font-size": "18px"},
             "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
             "nav-link-selected": {"background-color": "#555"},
