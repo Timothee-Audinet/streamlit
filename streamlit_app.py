@@ -54,15 +54,15 @@ st.markdown(
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            width: 50%;
+            width: 80%; /* Largeur du texte max pour éviter qu’il devienne trop large */
         }
         .header-text h1 {
-            font-size: 80px;
+            font-size: 6vw; /* 6% de la largeur de l'écran */
             font-weight: bold;
             margin: 0;
         }
         .header-text h2 {
-            font-size: 40px;
+            font-size: 3vw; /* 3% de la largeur de l'écran */
             font-weight: normal;
         }
         /* Section contenu limité */
