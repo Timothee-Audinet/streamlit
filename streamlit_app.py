@@ -4,6 +4,12 @@ from streamlit_option_menu import option_menu
 # Configuration de la page
 st.set_page_config(layout="wide")
 
+
+### POLICE ###
+with open( "style.css" ) as css:
+    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+
+
 # Style CSS personnalisé
 st.markdown(
     """
@@ -22,7 +28,7 @@ st.markdown(
         }
         /* Police globale */
         * {
-            font-family: 'Century Gothic', sans-serif !important;
+            font-family: 'Didact Gothic', sans-serif !important;
         }
         /* En-tête */
         .header-container {
@@ -55,6 +61,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 # --- Menu en pleine largeur ---
