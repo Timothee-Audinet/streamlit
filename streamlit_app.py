@@ -5,14 +5,6 @@ from st_social_media_links import SocialMediaIcons
 # Configuration de la page
 st.set_page_config(layout="wide")
 
-
-social_media_links1 = [
-    "https://www.instagram.com/timothee_wildlife_photo/",
-]
-social_media_links2 = [
-    "https://github.com/Timothee-Audinet",
-]
-
 ### POLICE ###
 with open( "style.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
@@ -105,7 +97,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
 
 
 # Définir les liens GitHub des dossiers d'images
