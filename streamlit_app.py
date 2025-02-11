@@ -124,10 +124,18 @@ if selected == "Accueil":
         """, unsafe_allow_html=True)
     
     st.markdown("<div class='content-container'>", unsafe_allow_html=True)
-    st.markdown("### 📖 À Propos")
+    st.markdown("### Bienvenue")
     st.write(
-        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
+        "Bienvenue sur mon site de photographie animalière."
+        "Vous trouverez plusieurs onglets, avec une galerie photos et les fonds d'écrans téléchargeables. Le site est encore en cours de construction (je l'écris tout seul)."
+    )
+    st.markdown("### A propos")
+    st.write(    
+        "Je suis actuellement en thèse de chimie quantique où j'étudie l'infuence des propriétés relativistes sur la structure des atomes."
+        "Mais de puis tout petit, je suis passionné par la photographie animalière. Il y a 4 ans j'ai commencé à photographier les animaux que j'aimais observer."
+        "J'essaye de capturer la beauté de la faune sauvage dans son habitat naturel. "
         "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
+        "N'hésitez pas à me suivre sur instagram pour recommander mon travail, cela aide beaucoup !"
     )
     st.markdown("</div>", unsafe_allow_html=True)
 
