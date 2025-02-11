@@ -125,7 +125,7 @@ st.markdown(
 with st.sidebar:
     selected = st.radio(
         "Navigation", 
-        ["Accueil", "Galerie", "Fond d'écran", "Contact"]
+        ["Accueil", "Galerie", "Fond d'écran", "Contact"],
         social_media_icons = SocialMediaIcons(social_media_links)
         social_media_icons.render()
     )
