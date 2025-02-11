@@ -138,7 +138,7 @@ photo_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/{B
 wallpaper_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/{BRANCH}/wallpaper_dir/"
 ## Liste des images (à adapter selon ton repo)
 photo_files = ["Hibou Moyen-Duc.jpg","Lynx Ibérique.png","Daim.png","Troglodyte Mignon.png","Chevrette.png","Brocard.jpg","Daim au coucher de soleil.png","Grand Tétras.png","Huîtrier Pie.png","Lever de soleil.png","Lynx Pardelle.png","Ours Brun.jpg","Sanglier.jpg"]  # Remplace par tes fichiers réels
-wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
+wallpaper_files = ["12.png","18.png","21.png","24.png","26.png","29.png"]  # Idem ici
 
 # --- Page d'Accueil ---
 if selected == "Accueil":
