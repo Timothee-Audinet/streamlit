@@ -80,6 +80,12 @@ st.markdown(
             flex-direction: column;
             align-items: center;
         }
+        .wallpaper-image {
+            width: 60%; /* Modifier ce pourcentage selon la taille désirée */
+            height: auto;
+            display: block;
+            margin: auto;
+        }
     </style>
     """,
     unsafe_allow_html=True
@@ -161,10 +167,16 @@ if selected == "Fond d'écran":
     cols = st.columns(3)
     
     for i, filename in enumerate(wallpaper_files):
-        img_url = wallpaper_dir + filename
-        with cols[i % 3]:
-            st.image(img_url, use_container_width=True)
-            st.download_button("Télécharger", img_url, file_name=filename)
+    img_url = wallpaper_dir + filename
+    with cols[i % 3]:
+        st.markdown(f'<img src="{img_url}" class="wallpaper-image">', unsafe_allow_html=True)
+        st.download_button("Télécharger", img_url, file_name=filename)
+    
+    #for i, filename in enumerate(wallpaper_files):
+    #    img_url = wallpaper_dir + filename
+    #    with cols[i % 3]:
+    #        st.image(img_url, use_container_width=True)
+    #        st.download_button("Télécharger", img_url, file_name=filename)
 
 # --- Page Contact ---
 if selected == "Contact":
