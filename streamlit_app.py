@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
-import pages as pg
 
 # Configuration de la page
 #st.set_page_config(layout="wide")
@@ -21,61 +20,73 @@ photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg
 wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
 
 
+########################################################################################################
+########################################################################################################
 
-
-
-
-
-###### MENU NAVIGATION SUPERIEUR ######
 st.set_page_config(initial_sidebar_state="collapsed")
 
 pages = ["Accueil", "Galerie", "Fond d'écran", "Contact"],
 options = {"use_padding": False}
-#parent_dir = os.path.dirname(os.path.abspath(__file__))
-#logo_path = os.path.join(parent_dir, "cubes.svg")
-#urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
-styles = {
-    "nav": {
-        "background-color": "royalblue",
-        "justify-content": "left",
-    },
-    "img": {
-        "padding-right": "14px",
-    },
-    "span": {
-        "color": "white",
-        "padding": "14px",
-    },
-    "active": {
-        "background-color": "white",
-        "color": "var(--text-color)",
-        "font-weight": "normal",
-        "padding": "14px",
-    }
-}
-options = {
-    "show_menu": False,
-    "show_sidebar": False,
-}
+urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
+styles = {"div": {"max-width": "35rem"}}
 
-page = st_navbar(
-    pages,
-    #logo_path=logo_path,
-    #urls=urls,
-    styles=styles,
-    options=options,
-)
+page = st_navbar(pages, urls=urls, styles=styles)
 
-functions = {
-    "Home": pg.show_home,
-    "Accueil": pg.show_home,
-    "Galerie": pg.show_galerie,
-}
-go_to = functions.get(page)
-if go_to:
-    go_to()
+st.header(page)
+
+# --- Page d'Accueil ---
+if page == "Accueil":
+    with st.container():
+        st.markdown("""
+        <div class="header-container">
+            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/ImageProfile.png" alt="Bannière">
+            <div class="header-text"><h1>Timothée Audinet</h1><h2>Photographe Animalier</h2></div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("### 📖 À Propos")
+    st.write(
+        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
+        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
+    )
 
 
+elif page == "Install":
+    st.write(
+        """
+        Mauris neque dui, scelerisque vel consequat maximus, hendrerit nec
+        lorem. Vestibulum suscipit tortor nec gravida imperdiet. Morbi eget ex
+        sed nunc hendrerit bibendum in ultrices urna. Pellentesque vitae est
+        tellus. Maecenas fringilla ullamcorper tempus. Nulla molestie arcu
+        quam. In et nibh a enim volutpat molestie ac id metus.
+        """
+    )
+elif page == "Documentation":
+    st.write(
+        """
+        Maecenas mollis, mauris sit amet pretium convallis, massa augue
+        scelerisque felis, in sagittis ante risus quis arcu. Nullam eu dolor id
+        tellus venenatis dapibus. Praesent a feugiat metus, a congue leo.
+        Suspendisse ipsum nunc, mattis eget luctus vel, molestie in ante.
+        Aliquam erat volutpat. Donec sollicitudin quam ac aliquet pellentesque.
+        """
+    )
+elif page == "Examples":
+    st.write(
+        """
+        Sed egestas justo vel leo pulvinar fringilla. Nam aliquam metus vitae
+        odio aliquam, in laoreet sapien tempus. Sed sit amet mauris quam.
+        Curabitur euismod convallis sapien, sed euismod tellus finibus ac.
+        Mauris ut felis vehicula, tincidunt magna quis, dignissim nisi. In
+        neque nisi, ultricies in lobortis at, venenatis non neque.
+        """
+    )
+
+with st.sidebar:
+    st.header("Sidebar")
+
+##################################################################################################################################
+##################################################################################################################################
 
 # Style CSS personnalisé
 st.markdown(
@@ -148,21 +159,7 @@ st.markdown(
 
 
 
-# --- Page d'Accueil ---
-if selected == "Accueil":
-    with st.container():
-        st.markdown("""
-        <div class="header-container">
-            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/ImageProfile.png" alt="Bannière">
-            <div class="header-text"><h1>Timothée Audinet</h1><h2>Photographe Animalier</h2></div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    st.markdown("### 📖 À Propos")
-    st.write(
-        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
-        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
-    )
+
 
 # --- Portfolios ---
 if selected == "Galerie":
