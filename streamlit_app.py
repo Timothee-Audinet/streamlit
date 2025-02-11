@@ -28,6 +28,10 @@ styles = {
 page = st_navbar(pages, styles=styles)
 st.write(page)
 
+
+with st.sidebar:
+    st.write("Sidebar")
+
 #st.header(page)
 
 if page == "Home":
