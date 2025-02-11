@@ -174,8 +174,13 @@ if selected == "Galerie":
 if selected == "Fond d'écran":
     st.title("🖼️ Téléchargez un fond d'écran")
     st.markdown("<div class='content-container'>", unsafe_allow_html=True)
-    st.markdown("### N'hésitez pas à télécharger les fonds d'écran !")
-    st.write(
+    st.header("N'hésitez pas à télécharger", divider=True)    
+    st.markdown('''If you end a line with two spaces,
+    a soft return is used for the next line.
+
+    Two (or more) newline characters in a row will result in a hard return.
+    ''')
+st.write(
         "Pour me remercier vous pouvez partager votre nouveau fond d'écran en m'identifiant sur votre story, me suivre, partager certaines de mes photos."
         "Merci."
     )
