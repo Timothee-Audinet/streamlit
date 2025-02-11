@@ -10,7 +10,7 @@ social_media_links1 = [
     "https://www.instagram.com/timothee_wildlife_photo/",
 ]
 social_media_links2 = [
-    "https://github.com/Timothee-Audinet",,
+    "https://github.com/Timothee-Audinet",
 ]
 
 ### POLICE ###
