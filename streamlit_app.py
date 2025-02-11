@@ -12,6 +12,11 @@ with open( "style.css" ) as css:
 st.markdown(
     """
     <style>
+        .block-container {
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+            margin-top: 1rem;
+        }
         /* Menu de navigation */
         .css-18e3th9 {
             background-color: #333 !important;
