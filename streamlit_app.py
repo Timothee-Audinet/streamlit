@@ -32,6 +32,7 @@ st.markdown(
         }
         /* En-tête */
         .header-container {
+            width: 150%;
             position: relative;
             text-align: center;
             color: white;
@@ -69,7 +70,7 @@ with st.container():
     selected = option_menu(
         menu_title=None,
         options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
-        icons=["house", "image", "info-circle", "envelope"],
+        icons=["house", "image", "phone", "envelope"],
         menu_icon="cast",
         default_index=0,
         orientation="horizontal",
