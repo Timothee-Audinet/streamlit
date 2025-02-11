@@ -37,7 +37,7 @@ st.markdown(
             color: white;
         }
         .header-container img {
-            width: 60%;
+            width: 1200%;
             height: auto;
             filter: brightness(60%);
         }
