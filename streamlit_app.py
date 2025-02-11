@@ -192,9 +192,7 @@ if selected == "Fond d'écran":
     st.write(
         "Pour me remercier vous pouvez partager votre nouveau fond d'écran en m'identifiant sur votre story, me suivre, partager certaines de mes photos."
     )
-    st.write(
-        "Merci."
-    )
+    st.write("Merci.")
     st.header("Merci", divider=True)    
 
     cols = st.columns(3)
