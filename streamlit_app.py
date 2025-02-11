@@ -6,9 +6,11 @@ from st_social_media_links import SocialMediaIcons
 st.set_page_config(layout="wide")
 
 
-social_media_links = [
+social_media_links1 = [
     "https://www.instagram.com/timothee_wildlife_photo/",
-    "https://github.com/Timothee-Audinet",
+]
+social_media_links2 = [
+    "https://github.com/Timothee-Audinet",,
 ]
 
 ### POLICE ###
@@ -127,7 +129,7 @@ with st.sidebar:
         "Navigation", 
         ["Accueil", "Galerie", "Fond d'écran", "Contact"]
     )
-    social_media_icons = SocialMediaIcons(social_media_links)
+    social_media_icons = SocialMediaIcons(social_media_links1)
     social_media_icons.render()
 
 # Définir les liens GitHub des dossiers d'images
@@ -181,7 +183,7 @@ if selected == "Accueil":
     )
     st.markdown("</div>", unsafe_allow_html=True)
 
-    social_media_icons = SocialMediaIcons(social_media_links)
+    social_media_icons = SocialMediaIcons(social_media_links2)
     social_media_icons.render()
 
 # --- Portfolios ---
