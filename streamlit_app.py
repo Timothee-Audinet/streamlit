@@ -193,7 +193,7 @@ if selected == "Fond d'écran":
         "Pour me remercier vous pouvez partager votre nouveau fond d'écran en m'identifiant sur votre story, me suivre, partager certaines de mes photos."
     )
     st.write("Merci.")
-    st.header("Merci", divider=True)    
+    st.header(" ", divider=True)    
 
     cols = st.columns(3)
     for i, filename in enumerate(wallpaper_files):
