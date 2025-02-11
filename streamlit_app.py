@@ -5,7 +5,7 @@ from streamlit_option_menu import option_menu
 st.set_page_config(layout="wide")
 
 
-with open( "/blob/main/style.css" ) as css:
+with open( "style.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
 
