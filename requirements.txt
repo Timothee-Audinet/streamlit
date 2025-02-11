@@ -1,4 +1,5 @@
 streamlit
 streamlit-option-menu
+st_social_media_links
 streamlit_navigation_bar
 pages
