@@ -26,6 +26,12 @@ st.markdown(
             letter-spacing: 1.5px;
             color: #ddd !important;
         }
+         .st-emotion-cache-1jicfl2 {
+            width: 100%;
+            padding: 6rem 1rem 10rem;
+            min-width: auto;
+            max-width: initial;
+        }
         /* Police globale */
         * {
             font-family: 'Didact Gothic', sans-serif !important;
