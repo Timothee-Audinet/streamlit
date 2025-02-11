@@ -5,89 +5,6 @@ from streamlit_navigation_bar import st_navbar
 # Configuration de la page
 #st.set_page_config(layout="wide")
 
-### POLICE ###
-with open( "style.css" ) as css:
-    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
-
-# Définir les liens GitHub des dossiers d'images
-GITHUB_USERNAME = "Timothee-Audinet"
-REPO_NAME = "streamlit"
-BRANCH = "main"
-photo_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/photos_dir/"
-wallpaper_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/wallpaper_dir/"
-## Liste des images (à adapter selon ton repo)
-photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg"]  # Remplace par tes fichiers réels
-wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
-
-
-########################################################################################################
-########################################################################################################
-
-st.set_page_config(initial_sidebar_state="collapsed")
-
-pages = ["Accueil", "Galerie", "Fond d'écran", "Contact"],
-options = {"use_padding": False}
-urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
-styles = {"div": {"max-width": "35rem"}}
-
-page = st_navbar(pages, urls=urls, styles=styles)
-
-st.header(page)
-
-# --- Page d'Accueil ---
-if page == "Accueil":
-    with st.container():
-        st.markdown("""
-        <div class="header-container">
-            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/ImageProfile.png" alt="Bannière">
-            <div class="header-text"><h1>Timothée Audinet</h1><h2>Photographe Animalier</h2></div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    st.markdown("### 📖 À Propos")
-    st.write(
-        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
-        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
-    )
-
-
-elif page == "Install":
-    st.write(
-        """
-        Mauris neque dui, scelerisque vel consequat maximus, hendrerit nec
-        lorem. Vestibulum suscipit tortor nec gravida imperdiet. Morbi eget ex
-        sed nunc hendrerit bibendum in ultrices urna. Pellentesque vitae est
-        tellus. Maecenas fringilla ullamcorper tempus. Nulla molestie arcu
-        quam. In et nibh a enim volutpat molestie ac id metus.
-        """
-    )
-elif page == "Documentation":
-    st.write(
-        """
-        Maecenas mollis, mauris sit amet pretium convallis, massa augue
-        scelerisque felis, in sagittis ante risus quis arcu. Nullam eu dolor id
-        tellus venenatis dapibus. Praesent a feugiat metus, a congue leo.
-        Suspendisse ipsum nunc, mattis eget luctus vel, molestie in ante.
-        Aliquam erat volutpat. Donec sollicitudin quam ac aliquet pellentesque.
-        """
-    )
-elif page == "Examples":
-    st.write(
-        """
-        Sed egestas justo vel leo pulvinar fringilla. Nam aliquam metus vitae
-        odio aliquam, in laoreet sapien tempus. Sed sit amet mauris quam.
-        Curabitur euismod convallis sapien, sed euismod tellus finibus ac.
-        Mauris ut felis vehicula, tincidunt magna quis, dignissim nisi. In
-        neque nisi, ultricies in lobortis at, venenatis non neque.
-        """
-    )
-
-with st.sidebar:
-    st.header("Sidebar")
-
-##################################################################################################################################
-##################################################################################################################################
-
 # Style CSS personnalisé
 st.markdown(
     """
@@ -139,6 +56,86 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
+
+### POLICE ###
+with open( "style.css" ) as css:
+    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+
+# Définir les liens GitHub des dossiers d'images
+GITHUB_USERNAME = "Timothee-Audinet"
+REPO_NAME = "streamlit"
+BRANCH = "main"
+photo_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/photos_dir/"
+wallpaper_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME}/refs/heads/main/wallpaper_dir/"
+## Liste des images (à adapter selon ton repo)
+photo_files = ["BROCARDweb-4994.jpg", "MOYENDUC-1434-3.jpg", "OURSweb-6686-3.jpg"]  # Remplace par tes fichiers réels
+wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
+
+
+########################################################################################################
+########################################################################################################
+
+st.set_page_config(initial_sidebar_state="collapsed")
+
+pages = ["Accueil", "Galerie", "Fond d'écran", "Contact"],
+options = {"use_padding": False}
+urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
+styles = {"div": {"max-width": "35rem"}}
+
+page = st_navbar(pages, urls=urls, styles=styles)
+
+st.header(page)
+
+# --- Page d'Accueil ---
+if page == "Accueil":
+    with st.container():
+        st.markdown("""
+        <div class="header-container">
+            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/ImageProfile.png" alt="Bannière">
+            <div class="header-text"><h1>Timothée Audinet</h1><h2>Photographe Animalier</h2></div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("### 📖 À Propos")
+    st.write(
+        "Passionné par la photographie animalière, je capture la beauté de la faune sauvage dans son habitat naturel. "
+        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
+    )
+
+if page == "Galerie":
+    st.title("📷 Galerie de Photographie")
+    cols = st.columns(3)
+    
+    for i, filename in enumerate(photo_files):
+        img_url = photo_dir + filename  # URL complète de l'image
+        with cols[i % 3]:
+            st.image(img_url, use_container_width=True)
+            st.caption(filename.split(".")[0])  # Affiche le nom du fichier
+
+if page == "Fond d'écran":
+    st.title("🖼️ Téléchargez un Wallpaper")
+    cols = st.columns(3)
+    
+    for i, filename in enumerate(wallpaper_files):
+        img_url = wallpaper_dir + filename
+        with cols[i % 3]:
+            st.image(img_url, use_container_width=True)
+            st.download_button("Télécharger", img_url, file_name=filename)
+
+# --- Page Contact ---
+if page == "Contact":
+    st.markdown("## 📩 Contact")
+    st.write("Formulaire de contact ou infos ici...")
+
+
+with st.sidebar:
+    st.header("Sidebar")
+
+##################################################################################################################################
+##################################################################################################################################
+
 
 # --- Menu en pleine largeur ---
 #with st.container():
