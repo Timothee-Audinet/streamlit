@@ -86,6 +86,13 @@ st.markdown(
             display: block;
             margin: auto;
         }
+        .download-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
     </style>
     """,
     unsafe_allow_html=True
@@ -169,8 +176,11 @@ if selected == "Fond d'écran":
     for i, filename in enumerate(wallpaper_files):
         img_url = wallpaper_dir + filename
         with cols[i % 3]:
-            st.markdown(f'<img src="{img_url}" class="wallpaper-image">', unsafe_allow_html=True)
-            st.download_button("Télécharger", img_url, file_name=filename)
+            st.markdown(f"""<div class="download-container"> <img src="{img_url}" class="wallpaper-image"> <br> <a href="{img_url}" download="{filename}"> <button style="padding: 10px 20px; font-size: 16px;">Télécharger</button> </a></div>""", unsafe_allow_html=True)
+
+            
+    #st.markdown(f'<img src="{img_url}" class="wallpaper-image">', unsafe_allow_html=True)
+    #st.download_button("Télécharger", img_url, file_name=filename)
     
     #for i, filename in enumerate(wallpaper_files):
     #    img_url = wallpaper_dir + filename
