@@ -5,6 +5,14 @@ from st_social_media_links import SocialMediaIcons
 # Configuration de la page
 st.set_page_config(layout="wide")
 
+
+social_media_links1 = [
+    "https://www.instagram.com/timothee_wildlife_photo/",
+]
+social_media_links2 = [
+    "https://github.com/Timothee-Audinet",
+]
+
 ### POLICE ###
 with open( "style.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
@@ -99,6 +107,31 @@ st.markdown(
 )
 
 
+# --- Menu en pleine largeur ---
+#with st.container():
+#    selected = option_menu(
+#        menu_title=None,
+#        options=["Accueil", "Galerie", "Fond d'écran", "Contact"],
+#        icons=["house", "image", "phone", "envelope"],
+#        menu_icon="cast",
+#        default_index=0,
+#        orientation="horizontal",
+#        styles={
+#            "container": {"padding": "0!important", "background-color": "#333", "width": "100%", "display": "flex", "justify-content": "center"},
+#            "icon": {"color": "white", "font-size": "18px"},
+#            "nav-link": {"font-size": "18px", "color": "white", "text-align": "center", "margin": "0px"},
+#            "nav-link-selected": {"background-color": "#555"},
+#        }
+#    )
+
+with st.sidebar:
+    selected = st.radio(
+        "Navigation", 
+        ["Accueil", "Fond d'écran"]
+    )
+    social_media_icons = SocialMediaIcons(social_media_links1)
+    social_media_icons.render()
+
 # Définir les liens GitHub des dossiers d'images
 GITHUB_USERNAME = "Timothee-Audinet"
 REPO_NAME = "streamlit"
@@ -107,17 +140,64 @@ wallpaper_dir = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{REPO_NAME
 ## Liste des images (à adapter selon ton repo)
 wallpaper_files = ["12.png","18.png","21.png","24.png","26.png","29.png"]  # Idem ici
 
-st.title("🖼️ Fonds d'écran")
-st.markdown("<div class='content-container'>", unsafe_allow_html=True)
-st.header("N'hésitez pas à télécharger !", divider=True)    
-st.write(
-    "Pour me remercier vous pouvez partager votre nouveau fond d'écran en m'identifiant sur votre story, me suivre, partager certaines de mes photos."
-)
-st.write("Merci.")
-st.header(" ", divider=True)    
+# --- Page d'Accueil ---
+if selected == "Accueil":
+    with st.container():
+        st.markdown("""
+        <div class="header-container">
+            <img src="https://raw.githubusercontent.com/Timothee-Audinet/streamlit/refs/heads/main/ImageProfile.png" alt="Bannière">
+            <div class="header-text"><h1>Timothée Audinet</h1><h2>Photographe Animalier</h2></div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("<div class='content-container'>", unsafe_allow_html=True)
+    st.markdown("### Bienvenue")
+    st.write(
+        "Bienvenue sur mon site de photographie animalière."
+    )
+    st.write(
+        "Vous trouverez plusieurs onglets, avec une galerie photos et les fonds d'écrans téléchargeables."
+    )
+    st.write(
+        "Le site est encore en cours de construction, j'apprend petit à petit."
+    )
+    st.markdown("### A propos")
+    st.write(    
+        "Je suis actuellement en thèse de chimie quantique où j'étudie l'infuence des propriétés relativistes sur la structure des atomes."
+    )
+    st.write(
+        "Mais depuis l'enfance, je suis passionné par la faune sauvage. Il y a 4 ans j'ai commencé à photographier les animaux que j'aimais observer."
+    )
+    st.write(
+        "J'essaye de capturer la beauté de la faune sauvage dans son habitat naturel, sans causer le moindre dérangement. "
+        "L'utilisation d'appât ou autres moyens d'approcher les animaux ne représente pas pour moi l'éthique photographique. "
+        "Seule l'attente et la patience me permettent d'obtenir mes photos."
+    )
+    st.write(
+        "À travers mes clichés, j'espère sensibiliser à la préservation des espèces et partager des moments uniques avec la nature."
+    )
+    st.write(
+        "N'hésitez pas à me suivre sur instagram pour recommander mon travail, cela aide beaucoup !"
+    )
+    st.markdown("</div>", unsafe_allow_html=True)
 
-cols = st.columns(3)
-for i, filename in enumerate(wallpaper_files):
-    img_url = wallpaper_dir + filename
-    with cols[i % 3]:
-      st.markdown(f"""<div class="download-container"> <img src="{img_url}" class="wallpaper-image"> <br> <a href="{img_url}" download="{filename}"> <button style="padding: 10px 20px; font-size: 16px;">Télécharger</button> </a></div>""", unsafe_allow_html=True)
+    social_media_icons = SocialMediaIcons(social_media_links2)
+    social_media_icons.render()
+
+if selected == "Fond d'écran":
+    st.title("🖼️ Fonds d'écran")
+    st.markdown("<div class='content-container'>", unsafe_allow_html=True)
+    st.header("N'hésitez pas à télécharger !", divider=True)    
+    st.write(
+        "Pour me remercier vous pouvez partager votre nouveau fond d'écran en m'identifiant sur votre story, me suivre, partager certaines de mes photos."
+    )
+    st.write("Merci.")
+    st.header(" ", divider=True)    
+
+    cols = st.columns(3)
+    for i, filename in enumerate(wallpaper_files):
+        img_url = wallpaper_dir + filename
+        with cols[i % 3]:
+            st.markdown(f"""<div class="download-container"> <img src="{img_url}" class="wallpaper-image"> <br> <a href="{img_url}" download="{filename}"> <button style="padding: 10px 20px; font-size: 16px;">Télécharger</button> </a></div>""", unsafe_allow_html=True)
+
+            
