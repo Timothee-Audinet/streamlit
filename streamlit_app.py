@@ -8,7 +8,7 @@ options = {"use_padding": False}
 urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
 styles = {"div": {"max-width": "35rem"}}
 
-page = st_navbar(pages, urls=urls, options, styles=styles)
+page = st_navbar(pages, urls=urls, styles=styles)
 
 st.header(page)
 
