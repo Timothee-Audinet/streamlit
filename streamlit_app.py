@@ -58,7 +58,6 @@ st.markdown(
             width: 100%;
         }
         .header-container img {
-            width: auto;
             height: 800px;
             filter: brightness(60%);
         }
