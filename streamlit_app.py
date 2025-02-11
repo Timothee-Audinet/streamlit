@@ -3,6 +3,7 @@ from streamlit_navigation_bar import st_navbar
 
 st.set_page_config(initial_sidebar_state="collapsed")
 
+
 pages = ["Home", "Install", "Documentation", "Examples", "GitHub"]
 styles = {
     "nav": {
@@ -27,10 +28,6 @@ styles = {
 
 page = st_navbar(pages, styles=styles)
 st.write(page)
-
-
-with st.sidebar:
-    st.write("Sidebar")
 
 #st.header(page)
 
