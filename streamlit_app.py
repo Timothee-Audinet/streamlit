@@ -195,7 +195,7 @@ if selected == "Fond d'écran":
     st.write(
         "Merci."
     )
-    st.header("", divider=True)    
+    st.header("Merci", divider=True)    
 
     cols = st.columns(3)
     for i, filename in enumerate(wallpaper_files):
