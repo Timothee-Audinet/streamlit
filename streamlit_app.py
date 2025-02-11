@@ -18,7 +18,7 @@ st.markdown(
         .css-18e3th9 {
             background-color: #333 !important;
             padding: 200px 0 !important;
-            max-width: 1200% !important;
+            width: 100% !important;
         }
         .css-18e3th9 span {
             font-size: 24px !important;
@@ -43,8 +43,8 @@ st.markdown(
         }
         .header-text {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 100%;
+            left: 100%;
             transform: translate(-50%, -50%);
             text-align: center;
         }
