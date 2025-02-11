@@ -1,9 +1,15 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+from st_social_media_links import SocialMediaIcons
 
 # Configuration de la page
 st.set_page_config(layout="wide")
 
+
+social_media_links = [
+    "https://www.instagram.com/timothee_wildlife_photo/",
+    "https://github.com/Timothee-Audinet",
+]
 
 ### POLICE ###
 with open( "style.css" ) as css:
@@ -120,6 +126,8 @@ with st.sidebar:
     selected = st.radio(
         "Navigation", 
         ["Accueil", "Galerie", "Fond d'écran", "Contact"]
+        social_media_icons = SocialMediaIcons(social_media_links)
+        social_media_icons.render()
     )
 
 # Définir les liens GitHub des dossiers d'images
