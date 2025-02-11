@@ -63,12 +63,12 @@ st.markdown(
             width: 80%; /* Largeur du texte max pour éviter qu’il devienne trop large */
         }
         .header-text h1 {
-            font-size: 6vw; /* 6% de la largeur de l'écran */
+            font-size: 4vw; /* 6% de la largeur de l'écran */
             font-weight: bold;
             margin: 0;
         }
         .header-text h2 {
-            font-size: 3vw; /* 3% de la largeur de l'écran */
+            font-size: 2vw; /* 3% de la largeur de l'écran */
             font-weight: normal;
         }
         /* Section contenu limité */
