@@ -145,10 +145,10 @@ if selected == "Accueil":
     st.markdown("<div class='content-container'>", unsafe_allow_html=True)
     st.markdown("### Bienvenue")
     st.write(
-        "Bienvenue sur mon site de photographie animalière.
+        "Bienvenue sur mon site de photographie animalière."
         
         
-        Vous trouverez plusieurs onglets, avec une galerie photos et les fonds d'écrans téléchargeables. Le site est encore en cours de construction (je l'écris tout seul)."
+        "Vous trouverez plusieurs onglets, avec une galerie photos et les fonds d'écrans téléchargeables. Le site est encore en cours de construction (je l'écris tout seul)."
     )
     st.markdown("### A propos")
     st.write(    
