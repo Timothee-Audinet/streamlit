@@ -2,6 +2,17 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
 
+st.set_page_config(initial_sidebar_state="collapsed")
+
+pages = ["Accueil", "Galerie", "Fond d'écran", "Contact"],
+options = {"use_padding": False}
+urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
+styles = {"div": {"max-width": "35rem"}}
+
+page = st_navbar(pages, urls=urls, styles=styles)
+
+st.header(page)
+
 # Configuration de la page
 #st.set_page_config(layout="wide")
 
@@ -76,17 +87,6 @@ wallpaper_files = ["FondEcran-Gobemouche-3556.jpg"]  # Idem ici
 
 ########################################################################################################
 ########################################################################################################
-
-st.set_page_config(initial_sidebar_state="collapsed")
-
-pages = ["Accueil", "Galerie", "Fond d'écran", "Contact"],
-options = {"use_padding": False}
-urls = {"GitHub": "https://github.com/gabrieltempass/streamlit-navigation-bar"}
-styles = {"div": {"max-width": "35rem"}}
-
-page = st_navbar(pages, urls=urls, styles=styles)
-
-st.header(page)
 
 # --- Page d'Accueil ---
 if page == "Accueil":
