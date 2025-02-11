@@ -18,7 +18,7 @@ st.markdown(
         .css-18e3th9 {
             background-color: #333 !important;
             padding: 200px 0 !important;
-            width: 100% !important;
+            width: 200% !important;
         }
         .css-18e3th9 span {
             font-size: 24px !important;
@@ -32,7 +32,6 @@ st.markdown(
         }
         /* En-tête */
         .header-container {
-            width: 150%;
             position: relative;
             text-align: center;
             color: white;
