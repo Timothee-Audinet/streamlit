@@ -63,7 +63,10 @@ st.markdown(
 )
 
 
-page = st_navbar(["Accueil", "Galerie", "Fond d'écran", "Contact"])
+page = st_navbar(
+    pages=["Accueil", "Galerie", "Fond d'écran", "Contact"],
+    options={"use_padding": False}
+)
 st.write(page)
 
 # --- Menu en pleine largeur ---
