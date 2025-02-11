@@ -18,7 +18,7 @@ st.markdown(
         .css-18e3th9 {
             background-color: #333 !important;
             padding: 200px 0 !important;
-            width: 200% !important;
+            max-width: 1200% !important;
         }
         .css-18e3th9 span {
             font-size: 24px !important;
