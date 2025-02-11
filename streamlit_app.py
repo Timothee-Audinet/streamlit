@@ -180,13 +180,12 @@ if selected == "Fond d'écran":
 
     Two (or more) newline characters in a row will result in a hard return.
     ''')
-st.write(
+    st.write(
         "Pour me remercier vous pouvez partager votre nouveau fond d'écran en m'identifiant sur votre story, me suivre, partager certaines de mes photos."
         "Merci."
     )
     
     cols = st.columns(3)
-    
     for i, filename in enumerate(wallpaper_files):
         img_url = wallpaper_dir + filename
         with cols[i % 3]:
