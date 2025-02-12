@@ -1,6 +1,6 @@
-import streamlit as st
-from streamlit_option_menu import option_menu
-from st_social_media_links import SocialMediaIcons
+#import streamlit as st
+#from streamlit_option_menu import option_menu
+#from st_social_media_links import SocialMediaIcons
 
 # Configuration de la page
 st.set_page_config(layout="wide")
